@@ -70,8 +70,11 @@ class AutonomousAgent {
 
     this.numLoops += 1;
     const maxLoops = this.modelSettings.customApiKey === "" ? 4 : 50;
-    if (this.numLoops > maxLoops) {
-      this.sendLoopMessage();
+    // garyfeng
+    //const maxLoops = this.modelSettings.customApiKey === "" ? 4 : 250;
+    //if (this.numLoops > maxLoops) {
+    if (this.numLoops > 250) {
+        this.sendLoopMessage();
       this.shutdown();
       return;
     }
